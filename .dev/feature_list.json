@@ -207,7 +207,7 @@
         "Verify public URL works",
         "Share URL with user"
       ],
-      "passes": false
+      "passes": true
     }
   ],
   "notes": "Priority order reflects implementation sequence. Complete features in order. Only change 'passes' field after thorough testing. Do not remove or modify feature definitions."
