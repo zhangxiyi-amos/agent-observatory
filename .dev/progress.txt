@@ -38,3 +38,15 @@
 **Next: feat-003 - Central hub object (AI core visualization)**
 
 ---
+
+## 2026-02-14 02:40 - feat-003 Complete (Roci)
+
+- ✅ CoreHub component with glowing sphere
+- ✅ Rotation + pulse animation
+- ✅ MeshDistortMaterial for organic feel
+- ✅ Stars background for space aesthetic
+- ✅ Point light emanating from core
+
+**Next: feat-004 - Session entity component**
+
+---

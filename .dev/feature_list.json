@@ -67,7 +67,7 @@
         "Particle effects around it",
         "Visually represents 'Roci' as the central entity"
       ],
-      "passes": false
+      "passes": true
     },
     {
       "id": "feat-004",

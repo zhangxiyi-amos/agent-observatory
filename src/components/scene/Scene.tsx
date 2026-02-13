@@ -1,7 +1,8 @@
 'use client';
 
 import { Canvas } from '@react-three/fiber';
-import { OrbitControls } from '@react-three/drei';
+import { OrbitControls, Stars } from '@react-three/drei';
+import CoreHub from './CoreHub';
 
 export default function Scene() {
   return (
@@ -13,10 +14,27 @@ export default function Scene() {
       }}
     >
       <color attach="background" args={['#0a0a0f']} />
+      
+      {/* Lighting */}
       <ambientLight intensity={0.4} />
-      <directionalLight position={[10, 10, 5]} />
+      <directionalLight position={[10, 10, 5]} intensity={0.5} />
+      
+      {/* Stars background */}
+      <Stars radius={100} depth={50} count={2000} factor={4} fade speed={1} />
+      
+      {/* Central AI Core */}
+      <CoreHub />
+      
+      {/* Grid */}
       <gridHelper args={[20, 20, '#222222', '#222222']} />
-      <OrbitControls makeDefault />
+      
+      {/* Controls */}
+      <OrbitControls 
+        makeDefault 
+        minDistance={5}
+        maxDistance={30}
+        enablePan={false}
+      />
     </Canvas>
   );
 }
