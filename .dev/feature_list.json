@@ -1,19 +1,214 @@
 {
   "project": "agent-observatory",
   "created": "2026-02-14",
+  "description": "3D visualization dashboard for observing and controlling AI agents running on OpenClaw",
+  "phases": [
+    {
+      "id": "phase-1",
+      "name": "Core 3D Scene",
+      "description": "Basic 3D environment and visual framework"
+    },
+    {
+      "id": "phase-2",
+      "name": "Session Visualization",
+      "description": "Display sessions as 3D entities with real-time status"
+    },
+    {
+      "id": "phase-3",
+      "name": "Configuration Panel",
+      "description": "View and edit agent configuration"
+    },
+    {
+      "id": "phase-4",
+      "name": "Activity Monitoring",
+      "description": "Real-time tool/skill usage visualization"
+    }
+  ],
   "features": [
     {
       "id": "feat-001",
+      "phase": "phase-1",
       "category": "setup",
       "priority": 1,
-      "description": "Basic project structure and dev environment",
+      "description": "Initialize Next.js project with React Three Fiber",
       "steps": [
-        "Run init.sh successfully",
-        "Dev server starts without errors",
-        "Basic health check endpoint responds"
+        "Create Next.js app with TypeScript",
+        "Install @react-three/fiber, @react-three/drei, three",
+        "Install tailwindcss, zustand",
+        "Verify dev server starts successfully",
+        "Basic page renders without errors"
+      ],
+      "passes": false
+    },
+    {
+      "id": "feat-002",
+      "phase": "phase-1",
+      "category": "core",
+      "priority": 2,
+      "description": "Create base 3D scene with camera and lighting",
+      "steps": [
+        "Canvas component fills viewport",
+        "OrbitControls for camera movement",
+        "Ambient + directional lighting",
+        "Dark space-like background",
+        "Grid floor for spatial reference"
+      ],
+      "passes": false
+    },
+    {
+      "id": "feat-003",
+      "phase": "phase-1",
+      "category": "core",
+      "priority": 3,
+      "description": "Central hub object representing the AI core",
+      "steps": [
+        "Glowing sphere or geometric shape at center",
+        "Subtle animation (rotation, pulse)",
+        "Particle effects around it",
+        "Visually represents 'Roci' as the central entity"
+      ],
+      "passes": false
+    },
+    {
+      "id": "feat-004",
+      "phase": "phase-2",
+      "category": "visualization",
+      "priority": 4,
+      "description": "Session entity component",
+      "steps": [
+        "Each session is a distinct 3D object",
+        "Different shapes/colors for different channels (Telegram=blue, Webchat=green, etc.)",
+        "Floating around the central hub",
+        "Shows session label on hover"
+      ],
+      "passes": false
+    },
+    {
+      "id": "feat-005",
+      "phase": "phase-2",
+      "category": "data",
+      "priority": 5,
+      "description": "Mock session data store",
+      "steps": [
+        "Zustand store for sessions",
+        "Mock data with various session types",
+        "Session properties: key, kind, channel, status, lastMessage",
+        "Automatic refresh every 5 seconds (simulated)"
+      ],
+      "passes": false
+    },
+    {
+      "id": "feat-006",
+      "phase": "phase-2",
+      "category": "visualization",
+      "priority": 6,
+      "description": "Session activity indicators",
+      "steps": [
+        "Active sessions glow brighter",
+        "Idle sessions dim slightly",
+        "New message creates pulse effect",
+        "Connection lines from session to central hub"
+      ],
+      "passes": false
+    },
+    {
+      "id": "feat-007",
+      "phase": "phase-2",
+      "category": "interaction",
+      "priority": 7,
+      "description": "Click session to select and show details",
+      "steps": [
+        "Raycast click detection",
+        "Selected session highlights",
+        "Info panel appears with session details",
+        "Shows last messages, channel info"
+      ],
+      "passes": false
+    },
+    {
+      "id": "feat-008",
+      "phase": "phase-3",
+      "category": "ui",
+      "priority": 8,
+      "description": "Configuration panel overlay",
+      "steps": [
+        "Slide-out panel on right side",
+        "Toggle button to show/hide",
+        "Displays agent configuration",
+        "Glassmorphism style to match 3D aesthetic"
+      ],
+      "passes": false
+    },
+    {
+      "id": "feat-009",
+      "phase": "phase-3",
+      "category": "data",
+      "priority": 9,
+      "description": "Mock configuration display",
+      "steps": [
+        "Show model name, thinking level",
+        "Show enabled channels",
+        "Show skills list",
+        "Formatted as readable cards"
+      ],
+      "passes": false
+    },
+    {
+      "id": "feat-010",
+      "phase": "phase-4",
+      "category": "visualization",
+      "priority": 10,
+      "description": "Tool usage visualization",
+      "steps": [
+        "When a tool is used, particle beam from session to hub",
+        "Different colors for different tool types",
+        "Tool name briefly appears in 3D space",
+        "Creates visual 'activity' feeling"
+      ],
+      "passes": false
+    },
+    {
+      "id": "feat-011",
+      "phase": "phase-4",
+      "category": "ui",
+      "priority": 11,
+      "description": "Activity log panel",
+      "steps": [
+        "Scrolling log of recent activities",
+        "Shows: timestamp, session, tool/action",
+        "New entries highlight briefly",
+        "Max 50 entries, auto-cleanup"
+      ],
+      "passes": false
+    },
+    {
+      "id": "feat-012",
+      "phase": "phase-4",
+      "category": "polish",
+      "priority": 12,
+      "description": "Responsive layout and mobile support",
+      "steps": [
+        "Works on different screen sizes",
+        "Touch controls for mobile",
+        "Panels adapt to viewport",
+        "Performance optimized for lower-end devices"
+      ],
+      "passes": false
+    },
+    {
+      "id": "feat-013",
+      "phase": "phase-4",
+      "category": "polish",
+      "priority": 13,
+      "description": "Deploy to Vercel",
+      "steps": [
+        "Configure vercel.json if needed",
+        "Deploy to production",
+        "Verify public URL works",
+        "Share URL with user"
       ],
       "passes": false
     }
   ],
-  "notes": "Add features here. Only change 'passes' field after thorough end-to-end testing."
+  "notes": "Priority order reflects implementation sequence. Complete features in order. Only change 'passes' field after thorough testing. Do not remove or modify feature definitions."
 }

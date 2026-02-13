@@ -1,66 +1,136 @@
-# AGENTS.md - Development Guide for Coding Agents
-
-*Read this before making any changes.*
+# AGENTS.md - Agent Observatory Development Guide
 
 ## Project Overview
 
-**Name:** agent-observatory
-**Purpose:** TODO: Add description
-**Tech Stack:** TypeScript, Node.js
+A 3D visualization dashboard for observing AI agents. Built with React Three Fiber, displays sessions as entities orbiting a central "AI core", shows real-time activity, and provides configuration viewing.
+
+## Tech Stack
+
+- **Framework**: Next.js 14 (App Router)
+- **3D**: React Three Fiber + Drei
+- **State**: Zustand
+- **Styling**: Tailwind CSS
+- **Language**: TypeScript
+- **Deploy**: Vercel
 
 ## Directory Structure
 
 ```
-TODO: Add structure
+src/
+├── app/
+│   ├── layout.tsx
+│   ├── page.tsx
+│   └── globals.css
+├── components/
+│   ├── scene/           # 3D components
+│   │   ├── Scene.tsx    # Main 3D canvas
+│   │   ├── CoreHub.tsx  # Central AI entity
+│   │   ├── SessionEntity.tsx
+│   │   └── Effects.tsx  # Post-processing
+│   ├── ui/              # 2D overlay components
+│   │   ├── ConfigPanel.tsx
+│   │   ├── SessionInfo.tsx
+│   │   └── ActivityLog.tsx
+│   └── index.ts
+├── stores/
+│   ├── sessionStore.ts
+│   ├── configStore.ts
+│   └── activityStore.ts
+├── types/
+│   └── index.ts
+└── lib/
+    └── mockData.ts
 ```
 
-## Development Rules
+## Critical Rules
 
-### Code Style
-- TypeScript preferred
-- Follow existing patterns in the codebase
-- Use ESLint + Prettier (config in repo)
+1. **ONE FEATURE PER SESSION** - Do not try to implement multiple features at once
+2. **TEST VISUALLY** - After implementing, verify it renders correctly in browser
+3. **COMMIT AFTER EACH FEATURE** - Keep commits atomic and descriptive
+4. **UPDATE PROGRESS** - Always update .dev/progress.txt at session end
 
-### Git Workflow
-- Create feature branch: `git checkout -b feature/your-feature`
-- Commit messages: `type: description` (e.g., `feat: add user auth`)
-- Types: `feat`, `fix`, `docs`, `refactor`, `test`, `chore`
+## Coding Standards
 
-### Testing
-- Every feature needs tests
-- Test file: `*.test.ts` or `__tests__/*.ts`
-- Run tests: `pnpm test`
+### TypeScript
+- Strict mode enabled
+- Explicit return types on functions
+- No `any` types without justification
 
-### Environment
-- Never hardcode secrets
-- Use `.env` for local development
-- Check `.env.example` for required variables
+### React Three Fiber
+- Use Drei helpers when available
+- Keep 3D components pure (no side effects in render)
+- Use `useFrame` for animations, not setInterval
 
-## Key Files
+### Components
+- One component per file
+- Export from index.ts
+- Props interfaces defined above component
 
-| File | Purpose |
-|------|---------|
-|  |
+### State Management
+- Zustand stores in /stores
+- Actions defined in store
+- Selectors for derived state
 
-## Common Tasks
+## Testing
 
-### Add a new feature
-1. Create feature branch
-2. Implement in `src/`
-3. Add tests in `__tests__/`
-4. Run tests locally
-5. Commit with clear message
+Since this is a visual project, testing is primarily manual:
+1. Run `pnpm dev`
+2. Open http://localhost:3000
+3. Verify feature works visually
+4. Check console for errors
+5. Test interactions (click, hover, etc.)
 
-### Fix a bug
-1. Write a failing test that reproduces the bug
-2. Fix the code
-3. Ensure test passes
-4. Commit: `fix: description of fix`
+## Commands
 
-## Gotchas
+```bash
+pnpm dev      # Start dev server
+pnpm build    # Production build
+pnpm lint     # Run linter
+```
 
-TODO: Add gotchas
+## Feature Implementation Flow
 
-## Contact
+1. Read `.dev/feature_list.json` to find next feature
+2. Implement the feature
+3. Test in browser
+4. If passing: update feature passes to true
+5. Git commit with `feat: [feat-id] description`
+6. Update `.dev/progress.txt`
 
-If stuck, ask Roci (the orchestrator) for guidance.
+## Known Gotchas
+
+- Three.js must be dynamically imported in Next.js (no SSR)
+- Use `'use client'` directive for 3D components
+- OrbitControls needs `makeDefault` prop
+- Canvas must have explicit height (not just 100%)
+
+## Design Guidelines
+
+### Visual Style
+- Dark theme (space-like)
+- Glowing, ethereal aesthetics
+- Smooth animations
+- Glassmorphism for UI panels
+
+### Colors
+- Background: `#0a0a0f` (near black)
+- Core hub: `#6366f1` (indigo glow)
+- Telegram sessions: `#0088cc`
+- Webchat sessions: `#22c55e`
+- Discord sessions: `#5865f2`
+- Active state: brighter + bloom
+- Idle state: dimmer
+
+### Animation
+- Core hub: slow rotation + pulse
+- Sessions: gentle orbit + float
+- Activity: particle beams
+- Transitions: 300ms ease
+
+## Do Not
+
+- Remove or modify feature definitions in feature_list.json
+- Skip visual testing
+- Leave console errors unfixed
+- Implement features out of order without reason
+- Forget to update progress.txt
