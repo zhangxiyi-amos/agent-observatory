@@ -24,3 +24,17 @@
 - Tech stack decided: Next.js 14 + React Three Fiber + Zustand + Tailwind
 
 ---
+
+## 2026-02-14 02:35 - feat-002 Complete (Roci)
+
+- ✅ Created Scene.tsx with R3F Canvas
+- ✅ OrbitControls for camera movement
+- ✅ Ambient + directional lighting
+- ✅ Dark background (#0a0a0f)
+- ✅ Grid helper for spatial reference
+- ✅ Dynamic import to avoid SSR issues
+- ✅ Build verified passing
+
+**Next: feat-003 - Central hub object (AI core visualization)**
+
+---

@@ -53,7 +53,7 @@
         "Dark space-like background",
         "Grid floor for spatial reference"
       ],
-      "passes": false
+      "passes": true
     },
     {
       "id": "feat-003",
