@@ -137,7 +137,7 @@
         "Displays agent configuration",
         "Glassmorphism style to match 3D aesthetic"
       ],
-      "passes": false
+      "passes": true
     },
     {
       "id": "feat-009",
@@ -151,7 +151,7 @@
         "Show skills list",
         "Formatted as readable cards"
       ],
-      "passes": false
+      "passes": true
     },
     {
       "id": "feat-010",

@@ -2,6 +2,7 @@
 
 import dynamic from 'next/dynamic';
 import SessionInfo from '../components/ui/SessionInfo';
+import ConfigPanel from '../components/ui/ConfigPanel';
 
 const Scene = dynamic(() => import('../components/scene/Scene'), {
   ssr: false,
@@ -25,6 +26,7 @@ export default function HomePage() {
     <>
       <Scene />
       <SessionInfo />
+      <ConfigPanel />
     </>
   );
 }
