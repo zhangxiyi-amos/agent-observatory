@@ -1,0 +1,19 @@
+{
+  "project": "agent-observatory",
+  "created": "2026-02-14",
+  "features": [
+    {
+      "id": "feat-001",
+      "category": "setup",
+      "priority": 1,
+      "description": "Basic project structure and dev environment",
+      "steps": [
+        "Run init.sh successfully",
+        "Dev server starts without errors",
+        "Basic health check endpoint responds"
+      ],
+      "passes": false
+    }
+  ],
+  "notes": "Add features here. Only change 'passes' field after thorough end-to-end testing."
+}
