@@ -38,7 +38,7 @@
         "Verify dev server starts successfully",
         "Basic page renders without errors"
       ],
-      "passes": false
+      "passes": true
     },
     {
       "id": "feat-002",

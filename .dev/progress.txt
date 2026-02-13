@@ -1,5 +1,20 @@
 # Progress Log - Agent Observatory
 
+## 2026-02-14 02:30 - feat-001 Complete (Roci)
+
+- ✅ Next.js 14 + TypeScript initialized
+- ✅ React Three Fiber + Drei + Three.js installed
+- ✅ Zustand installed
+- ✅ Tailwind CSS + PostCSS configured
+- ✅ Directory structure created (components/scene, components/ui, stores, types, lib)
+- ✅ Dev server verified working
+
+**Note:** Codex had network issues, completed manually.
+
+**Next: feat-002 - Create base 3D scene with camera and lighting**
+
+---
+
 ## 2026-02-14 02:15 - Project Initialization (Roci)
 
 - Created GitHub repo: zhangxiyi-amos/agent-observatory
@@ -7,7 +22,5 @@
 - Wrote AGENTS.md with development guidelines
 - Wrote ARCHITECTURE.md with system design
 - Tech stack decided: Next.js 14 + React Three Fiber + Zustand + Tailwind
-
-**Next: feat-001 - Initialize Next.js project with React Three Fiber**
 
 ---
