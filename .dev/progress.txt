@@ -63,3 +63,16 @@
 **Next: feat-006 - Session activity indicators (connection lines)**
 
 ---
+
+## 2026-02-14 02:50 - feat-006 & feat-007 Complete (Roci)
+
+- ✅ Connection lines from sessions to core hub
+- ✅ Lines update dynamically with orbit
+- ✅ Active sessions have brighter lines
+- ✅ Click-to-select sessions
+- ✅ SessionInfo panel with details
+- ✅ Shows channel, status, last message, time ago
+
+**Phase 2 Complete! Next: feat-008 - Configuration panel**
+
+---

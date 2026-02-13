@@ -109,7 +109,7 @@
         "New message creates pulse effect",
         "Connection lines from session to central hub"
       ],
-      "passes": false
+      "passes": true
     },
     {
       "id": "feat-007",
@@ -123,7 +123,7 @@
         "Info panel appears with session details",
         "Shows last messages, channel info"
       ],
-      "passes": false
+      "passes": true
     },
     {
       "id": "feat-008",

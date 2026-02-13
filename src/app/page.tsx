@@ -1,6 +1,7 @@
 'use client';
 
 import dynamic from 'next/dynamic';
+import SessionInfo from '../components/ui/SessionInfo';
 
 const Scene = dynamic(() => import('../components/scene/Scene'), {
   ssr: false,
@@ -14,11 +15,16 @@ const Scene = dynamic(() => import('../components/scene/Scene'), {
       justifyContent: 'center',
       color: '#666'
     }}>
-      Loading...
+      Loading Observatory...
     </div>
   ),
 });
 
 export default function HomePage() {
-  return <Scene />;
+  return (
+    <>
+      <Scene />
+      <SessionInfo />
+    </>
+  );
 }

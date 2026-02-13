@@ -4,6 +4,7 @@ import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Stars } from '@react-three/drei';
 import CoreHub from './CoreHub';
 import SessionsGroup from './SessionsGroup';
+import ConnectionLines from './ConnectionLines';
 
 export default function Scene() {
   return (
@@ -25,6 +26,9 @@ export default function Scene() {
       
       {/* Central AI Core */}
       <CoreHub />
+      
+      {/* Connection lines */}
+      <ConnectionLines />
       
       {/* Session entities */}
       <SessionsGroup />
