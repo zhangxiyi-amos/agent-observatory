@@ -50,3 +50,16 @@
 **Next: feat-004 - Session entity component**
 
 ---
+
+## 2026-02-14 02:45 - feat-004 & feat-005 Complete (Roci)
+
+- ✅ SessionEntity component with orbit animation
+- ✅ Channel-specific colors (Telegram blue, Discord purple, etc.)
+- ✅ Hover labels and click-to-select
+- ✅ Status indicators (active glow, thinking ring)
+- ✅ Zustand session store with mock data
+- ✅ Types defined for Session and Activity
+
+**Next: feat-006 - Session activity indicators (connection lines)**
+
+---

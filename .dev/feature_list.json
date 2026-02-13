@@ -81,7 +81,7 @@
         "Floating around the central hub",
         "Shows session label on hover"
       ],
-      "passes": false
+      "passes": true
     },
     {
       "id": "feat-005",
@@ -95,7 +95,7 @@
         "Session properties: key, kind, channel, status, lastMessage",
         "Automatic refresh every 5 seconds (simulated)"
       ],
-      "passes": false
+      "passes": true
     },
     {
       "id": "feat-006",

@@ -3,6 +3,7 @@
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Stars } from '@react-three/drei';
 import CoreHub from './CoreHub';
+import SessionsGroup from './SessionsGroup';
 
 export default function Scene() {
   return (
@@ -16,8 +17,8 @@ export default function Scene() {
       <color attach="background" args={['#0a0a0f']} />
       
       {/* Lighting */}
-      <ambientLight intensity={0.4} />
-      <directionalLight position={[10, 10, 5]} intensity={0.5} />
+      <ambientLight intensity={0.3} />
+      <directionalLight position={[10, 10, 5]} intensity={0.4} />
       
       {/* Stars background */}
       <Stars radius={100} depth={50} count={2000} factor={4} fade speed={1} />
@@ -25,8 +26,11 @@ export default function Scene() {
       {/* Central AI Core */}
       <CoreHub />
       
+      {/* Session entities */}
+      <SessionsGroup />
+      
       {/* Grid */}
-      <gridHelper args={[20, 20, '#222222', '#222222']} />
+      <gridHelper args={[20, 20, '#1a1a2e', '#1a1a2e']} />
       
       {/* Controls */}
       <OrbitControls 
